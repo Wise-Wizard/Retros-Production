@@ -1,0 +1,68 @@
+/* Add this CSS in your project's stylesheet */
+.product-details-col {
+  padding: 20px;
+}
+
+.product-details-list {
+  border: none;
+}
+
+.product-details-item {
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+/* Dark background with white text color */
+.product-details-item.custom-dark-bg {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Light gray background with dark text color */
+.product-details-item.custom-light-bg {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.product-name {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.product-price {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.product-description {
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+/* Add this CSS in your project's stylesheet */
+@keyframes heartBeat {
+  0% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.15);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(1.15);
+  }
+
+  60% {
+    transform: scale(1);
+  }
+}
+
+.beatingHeart {
+  animation: heartBeat 1.2s infinite;
+}

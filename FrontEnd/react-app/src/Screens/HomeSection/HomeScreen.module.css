@@ -1,0 +1,102 @@
+.button_Navbar {
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+}
+
+/* Button CSS */
+.nav_Button {
+  --color: #3586ff;
+  padding: 0.5em 1.7em;
+  background-color: transparent;
+  border-radius: 0.8em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.5s;
+  font-weight: 400;
+  font-size: 20px;
+  border: 2px solid;
+  font-family: inherit;
+  text-transform: uppercase;
+  color: var(--color);
+  z-index: 1;
+}
+
+.nav_Button::before,
+.nav_Button::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: var(--color);
+  transition: 1s ease;
+}
+
+.nav_Button::before {
+  top: -1em;
+  left: -1em;
+}
+
+.nav_Button::after {
+  left: calc(100% + 1em);
+  top: calc(100% + 1em);
+}
+
+.nav_Button:hover::before,
+.nav_Button:hover::after {
+  height: 410px;
+  width: 410px;
+}
+
+.nav_Button:hover {
+  color: rgb(10, 25, 30);
+}
+
+.nav_Button:active {
+  filter: brightness(0.8);
+}
+/* Button CSS */
+
+/* Main Image */
+.main_Image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 30px 0px;
+  animation: slideIn 1.5s cubic-bezier(0.42, 0, 0.58, 1) both;
+  animation-play-state: paused; /* Pause the animation by default */
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.category_link {
+  vertical-align: baseline;
+  margin-left: 12px;
+  margin-top: 8px; /* Add some space between the heading and link in mobile */
+}
+
+@media screen and (max-width: 768px) {
+  .nav_Button {
+    padding: 5px 5px;
+    margin: 0px 5px;
+  }
+}

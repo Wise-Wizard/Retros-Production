@@ -1,0 +1,17 @@
+/* Add this CSS to your stylesheet */
+.custom-card {
+  padding: 30px;
+  width: 450px;
+}
+.custom-payment-message {
+  width: 800px;
+}
+@media (max-width: 768px) {
+  .custom-card {
+    width: 90%; /* Adjust the width for smaller screens */
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
+  .custom-payment-message {
+    width: 100%; /* Adjust the width for smaller screens */
+  }
+}
