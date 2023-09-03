@@ -26,7 +26,7 @@ export const loginUser = (email, password) => async (dispatch) => {
     dispatch({ type: USER_LOGIN_REQUEST });
     const config = { headers: { "Content-Type": "application/json" } };
     const { data } = await axios.post(
-      "http://localhost:8080/api/users/login",
+      "http://api-retros.ap-south-1.elasticbeanstalk.com/api/users/login",
       { email, password },
       config
     );
@@ -42,7 +42,7 @@ export const registerUser = (name, email, password) => async (dispatch) => {
     dispatch({ type: USER_REGISTER_REQUEST });
     const config = { headers: { "Content-Type": "application/json" } };
     const { data } = await axios.post(
-      "http://localhost:8080/api/users",
+      "http://api-retros.ap-south-1.elasticbeanstalk.com/api/users",
       { name, email, password },
       config
     );
@@ -67,7 +67,7 @@ export const getUser = (id) => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.get(
-      `http://localhost:8080/api/users/${id}`,
+      `http://api-retros.ap-south-1.elasticbeanstalk.com/api/users/${id}`,
       config
     );
     dispatch({ type: USER_PROFILE_SUCCESS, payload: data });
@@ -89,7 +89,7 @@ export const updateUser = (user) => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.put(
-      `http://localhost:8080/api/users/profile`,
+      `http://api-retros.ap-south-1.elasticbeanstalk.com/api/users/profile`,
       user,
       config
     );

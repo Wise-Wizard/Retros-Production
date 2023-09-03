@@ -8,9 +8,6 @@ import {
   ADMIN_ORDERS_REQUEST,
   ADMIN_ORDERS_SUCCESS,
   ADMIN_ORDERS_FAILURE,
-  ADMIN_PRODUCTS_REQUEST,
-  ADMIN_PRODUCTS_SUCCESS,
-  ADMIN_PRODUCTS_FAILURE,
 } from "../Constants/adminConstants";
 import axios from "axios";
 
@@ -27,7 +24,7 @@ export const getUsersList = () => async (dispatch, getState) => {
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    const { data } = await axios.get(`http://localhost:8080/api/users`, config);
+    const { data } = await axios.get(`http://api-retros.ap-south-1.elasticbeanstalk.com/api/users`, config);
     dispatch({ type: ADMIN_USERS_SUCCESS, payload: data });
   } catch (error) {
     dispatch({ type: ADMIN_USERS_FAILURE, payload: error.message });
@@ -46,9 +43,9 @@ export const deleteUser = (id) => async (dispatch, getState) => {
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    await axios.delete(`http://localhost:8080/api/users/${id}`, config);
+    await axios.delete(`http://api-retros.ap-south-1.elasticbeanstalk.com/api/users/${id}`, config);
 
-    const { data } = await axios.get(`http://localhost:8080/api/users`, config);
+    const { data } = await axios.get(`http://api-retros.ap-south-1.elasticbeanstalk.com/api/users`, config);
     dispatch({ type: ADMIN_USERS_DELETE_SUCCESS, payload: data });
   } catch (error) {
     dispatch({ type: ADMIN_USERS_DELETE_FAILURE, payload: error.message });
@@ -69,7 +66,7 @@ export const getOrdersList = () => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.get(
-      `http://localhost:8080/api/orders`,
+      `http://api-retros.ap-south-1.elasticbeanstalk.com/api/orders`,
       config
     );
     dispatch({ type: ADMIN_ORDERS_SUCCESS, payload: data });
