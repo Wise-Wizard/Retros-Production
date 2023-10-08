@@ -13,7 +13,7 @@ const productListAction = () => async (dispatch) => {
   try {
     dispatch({ type: "PRODUCT_LIST_REQUEST" });
     const { data } = await axios.get(
-      "http://api-retros.ap-south-1.elasticbeanstalk.com/api/products"
+      "https://api-retros.ap-south-1.elasticbeanstalk.com/api/products"
     );
     dispatch({ type: "PRODUCT_LIST_SUCCESS", payload: data });
   } catch (error) {
@@ -35,7 +35,7 @@ export const createProduct = (newProductData) => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.post(
-      "http://api-retros.ap-south-1.elasticbeanstalk.com/api/products",
+      "https://api-retros.ap-south-1.elasticbeanstalk.com/api/products",
       newProductData,
       config
     );
@@ -59,12 +59,12 @@ export const deleteProduct = (id) => async (dispatch, getState) => {
       },
     };
     await axios.delete(
-      `http://api-retros.ap-south-1.elasticbeanstalk.com/api/products/${id}`,
+      `https://api-retros.ap-south-1.elasticbeanstalk.com/api/products/${id}`,
       config
     );
 
     const { data } = await axios.get(
-      `http://api-retros.ap-south-1.elasticbeanstalk.com/api/products`,
+      `https://api-retros.ap-south-1.elasticbeanstalk.com/api/products`,
       config
     );
     dispatch({ type: ADMIN_PRODUCT_DELETE_SUCCESS, payload: data });
@@ -87,12 +87,12 @@ export const updateProduct =
         },
       };
       await axios.put(
-        `http://api-retros.ap-south-1.elasticbeanstalk.com/api/products/${id}`,
+        `https://api-retros.ap-south-1.elasticbeanstalk.com/api/products/${id}`,
         updatedProductData,
         config
       );
       const { data } = await axios.get(
-        `http://api-retros.ap-south-1.elasticbeanstalk.com/api/products`,
+        `https://api-retros.ap-south-1.elasticbeanstalk.com/api/products`,
         config
       );
       dispatch({ type: ADMIN_PRODUCT_DELETE_SUCCESS, payload: data });
