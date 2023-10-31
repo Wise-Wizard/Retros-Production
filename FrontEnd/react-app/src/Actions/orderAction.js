@@ -28,7 +28,11 @@ export const createOrder = (order) => async (dispatch, getState) => {
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    const { data } = await axios.post("https://api-retros.ap-south-1.elasticbeanstalk.com/api/orders", order, config);
+    const { data } = await axios.post(
+      "https://api.theretros.in/api/orders",
+      order,
+      config
+    );
     dispatch({ type: ORDER_CREATE_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
@@ -52,7 +56,10 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    const { data } = await axios.get(`https://api-retros.ap-south-1.elasticbeanstalk.com/api/orders/${id}`, config);
+    const { data } = await axios.get(
+      `https://api.theretros.in/api/orders/${id}`,
+      config
+    );
     dispatch({ type: ORDER_DETAILS_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
@@ -78,7 +85,7 @@ export const payOrder =
         },
       };
       const { data } = await axios.put(
-        `https://api-retros.ap-south-1.elasticbeanstalk.com/api/orders/${orderId}/pay`,
+        `https://api.theretros.in/api/orders/${orderId}/pay`,
         paymentResult,
         config
       );
@@ -104,7 +111,10 @@ export const listMyOrders = () => async (dispatch, getState) => {
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    const { data } = await axios.get("https://api-retros.ap-south-1.elasticbeanstalk.com/api/orders/myorders", config);
+    const { data } = await axios.get(
+      "https://api.theretros.in/api/orders/myorders",
+      config
+    );
     dispatch({ type: ORDER_LIST_MY_SUCCESS, payload: data });
   } catch (error) {
     dispatch({

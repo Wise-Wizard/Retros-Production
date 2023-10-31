@@ -24,7 +24,7 @@ export const getUsersList = () => async (dispatch, getState) => {
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    const { data } = await axios.get(`https://api-retros.ap-south-1.elasticbeanstalk.com/api/users`, config);
+    const { data } = await axios.get(`https://api.theretros.in/api/users`, config);
     dispatch({ type: ADMIN_USERS_SUCCESS, payload: data });
   } catch (error) {
     dispatch({ type: ADMIN_USERS_FAILURE, payload: error.message });
@@ -43,9 +43,9 @@ export const deleteUser = (id) => async (dispatch, getState) => {
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    await axios.delete(`https://api-retros.ap-south-1.elasticbeanstalk.com/api/users/${id}`, config);
+    await axios.delete(`https://api.theretros.in/api/users/${id}`, config);
 
-    const { data } = await axios.get(`https://api-retros.ap-south-1.elasticbeanstalk.com/api/users`, config);
+    const { data } = await axios.get(`https://api.theretros.in/api/users`, config);
     dispatch({ type: ADMIN_USERS_DELETE_SUCCESS, payload: data });
   } catch (error) {
     dispatch({ type: ADMIN_USERS_DELETE_FAILURE, payload: error.message });
@@ -66,7 +66,7 @@ export const getOrdersList = () => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.get(
-      `https://api-retros.ap-south-1.elasticbeanstalk.com/api/orders`,
+      `https://api.theretros.in/api/orders`,
       config
     );
     dispatch({ type: ADMIN_ORDERS_SUCCESS, payload: data });

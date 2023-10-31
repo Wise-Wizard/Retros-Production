@@ -23,7 +23,7 @@ export const getFavourites = () => async (dispatch, getstate) => {
       },
     };
     const { data } = await axios.get(
-      `https://api-retros.ap-south-1.elasticbeanstalk.com/api/users/favourites`,
+      `https://api.theretros.in/api/users/favourites`,
       config
     );
     localStorage.setItem("userFav", JSON.stringify(data));
@@ -49,12 +49,12 @@ export const addFavorite = (id) => async (dispatch, getState) => {
     };
 
     await axios.post(
-      `https://api-retros.ap-south-1.elasticbeanstalk.com/api/users/favourites/${id}`,
+      `https://api.theretros.in/api/users/favourites/${id}`,
       {},
       config
     );
     const { data } = await axios.get(
-      `https://api-retros.ap-south-1.elasticbeanstalk.com/api/users/favourites`,
+      `https://api.theretros.in/api/users/favourites`,
       config
     );
     dispatch({ type: USER_ADD_FAVORITE_SUCCESS, payload: data });
@@ -81,12 +81,12 @@ export const deleteFavourite = (id) => async (dispatch, getState) => {
     };
 
     await axios.delete(
-      `https://api-retros.ap-south-1.elasticbeanstalk.com/api/users/favourites/${id}`,
+      `https://api.theretros.in/api/users/favourites/${id}`,
       config
     );
 
     const { data } = await axios.get(
-      `https://api-retros.ap-south-1.elasticbeanstalk.com/api/users/favourites`,
+      `https://api.theretros.in/api/users/favourites`,
       config
     );
     dispatch({ type: USER_DELETE_FAVORITE_SUCCESS, payload: data });
