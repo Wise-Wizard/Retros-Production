@@ -7,10 +7,10 @@ import styles from "./HomeScreen.module.css";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import LinkIcon from "@mui/icons-material/Link";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import ModelCarousel from "../../Components/HomeComponents/ModelCarousel";
 import MultiGridCarousel from "../../Components/HomeComponents/Caraousel";
-import ImageScrollAnimation from "../../Components/HomeComponents/ImageComponent";
 import { useNavigate } from "react-router-dom";
-import DesktopCarousel from "../../Components/HomeComponents/DesktopCaraosel";
+import DesktopCarousel from "../../Components/HomeComponents/DesktopCarousel";
 import { useMediaQuery } from "react-responsive";
 
 function Home() {
@@ -48,11 +48,7 @@ function Home() {
               <LinkIcon fontSize="large" />
             </button>
           </div>{" "}
-          <ImageScrollAnimation
-            imageUrl={
-              "https://cdn.pixabay.com/photo/2023/05/19/18/07/bee-8005091_1280.jpg"
-            }
-          />
+          <ModelCarousel />
           <div className="bag_Section">
             <h2 className="welcome-heading">
               Tote Bags
@@ -78,11 +74,6 @@ function Home() {
               />
             )}
           </div>
-          <ImageScrollAnimation
-            imageUrl={
-              "https://cdn.pixabay.com/photo/2023/05/27/12/20/eastern-spinebill-8021395_1280.jpg"
-            }
-          />
           <div className="bracelet_Section">
             <h2 className="welcome-heading">
               Bracelets

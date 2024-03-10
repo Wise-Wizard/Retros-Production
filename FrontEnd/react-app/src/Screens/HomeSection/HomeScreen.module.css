@@ -62,32 +62,6 @@
 }
 /* Button CSS */
 
-/* Main Image */
-.main_Image {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin: 30px 0px;
-  animation: slideIn 1.5s cubic-bezier(0.42, 0, 0.58, 1) both;
-  animation-play-state: paused; /* Pause the animation by default */
-}
-
-@keyframes slideIn {
-  0% {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  50% {
-    opacity: 1;
-    transform: translateX(10%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0%);
-  }
-}
-
 .category_link {
   vertical-align: baseline;
   margin-left: 12px;
