@@ -71,7 +71,11 @@ function Home() {
               <a href="/product/totebags">See All Collection</a>
               <ArrowForwardIcon
                 fontSize="small"
-                style={{ marginLeft: "4px", verticalAlign: "baseline" }}
+                style={{
+                  marginLeft: "4px",
+                  marginTop: "20px",
+                  verticalAlign: "baseline",
+                }}
               />
             </h5>
           </div>
@@ -97,7 +101,11 @@ function Home() {
               <a href="/product/bracelets">See All Collection</a>
               <ArrowForwardIcon
                 fontSize="small"
-                style={{ marginLeft: "4px", verticalAlign: "baseline" }}
+                style={{
+                  marginLeft: "4px",
+                  marginTop: "20px",
+                  verticalAlign: "baseline",
+                }}
               />
             </h5>
           </div>
