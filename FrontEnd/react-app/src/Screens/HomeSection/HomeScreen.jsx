@@ -73,7 +73,7 @@ function Home() {
                 fontSize="small"
                 style={{
                   marginLeft: "4px",
-                  marginTop: "20px",
+                  marginTop: "25px",
                   verticalAlign: "baseline",
                 }}
               />
@@ -103,7 +103,7 @@ function Home() {
                 fontSize="small"
                 style={{
                   marginLeft: "4px",
-                  marginTop: "20px",
+                  marginTop: "25px",
                   verticalAlign: "baseline",
                 }}
               />
