@@ -31,8 +31,8 @@ function Home() {
         <Error variant="danger" children={error} />
       ) : (
         <div className="home">
-          <h1 className="welcome-heading">Discover Retros</h1>
-          <div className={styles.button_Navbar}>
+          {/* <h1 className="welcome-heading">Discover Retros</h1> */}
+          {/* <div className={styles.button_Navbar}>
             <button
               className={styles.nav_Button}
               onClick={() => Navigate("/product/totebags")}
@@ -47,19 +47,13 @@ function Home() {
               Bracelets &nbsp;
               <LinkIcon fontSize="large" />
             </button>
-          </div>{" "}
+          </div>{" "} */}
           <ModelCarousel />
           <div className="bag_Section">
-            <h2 className="welcome-heading">
-              Tote Bags
-              <h5 className={styles.category_link}>
-                <a href="/product/totebags">See All Collection</a>
-                <ArrowForwardIcon
-                  fontSize="small"
-                  style={{ marginLeft: "4px", verticalAlign: "baseline" }}
-                />
-              </h5>
-            </h2>
+            {/* <h2 className="welcome-heading">
+              Tote Bags */}
+
+            {/* </h2> */}
             {isMobile ? (
               <MultiGridCarousel
                 products={products.filter(
@@ -73,18 +67,19 @@ function Home() {
                 )}
               />
             )}
+            <h5 className={styles.category_link}>
+              <a href="/product/totebags">See All Collection</a>
+              <ArrowForwardIcon
+                fontSize="small"
+                style={{ marginLeft: "4px", verticalAlign: "baseline" }}
+              />
+            </h5>
           </div>
           <div className="bracelet_Section">
-            <h2 className="welcome-heading">
-              Bracelets
-              <h5 className={styles.category_link}>
-                <a href="/product/bracelets">See All Collection</a>
-                <ArrowForwardIcon
-                  fontSize="small"
-                  style={{ marginLeft: "4px", verticalAlign: "baseline" }}
-                />
-              </h5>
-            </h2>
+            {/* <h2 className="welcome-heading">
+              Bracelets */}
+
+            {/* </h2> */}
             {isMobile ? (
               <MultiGridCarousel
                 products={products.filter(
@@ -98,6 +93,13 @@ function Home() {
                 )}
               />
             )}
+            <h5 className={styles.category_link}>
+              <a href="/product/bracelets">See All Collection</a>
+              <ArrowForwardIcon
+                fontSize="small"
+                style={{ marginLeft: "4px", verticalAlign: "baseline" }}
+              />
+            </h5>
           </div>
         </div>
       )}
